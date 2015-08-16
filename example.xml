@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<blazon ID="N1-0"
+        blazonText="quartered first and fourth Quarterly Gules and Or, in the first quarter a lion passant Argent, a crescent Sable on a crescent Argent for difference.; second and third Per saltire Sable and Ermine, a lion rampant Or; over all the quarterings a crescent Azure for difference">
+    <shield ID="N1-51">
+        <complex ID="N1-2" keyterm="quartered" tokens="quartered" order="4">
+            <shield ID="N1-31" index="1">
+                <simple ID="N1-10">
+                    <field ID="N1-9">
+                        <tincture ID="N1-3" index="1" origin="given">
+                            <division ID="N1-4" keyterm="quarterly" tokens="first and fourth Quarterly">
+                                <tincture ID="N1-5" index="1" origin="given">
+                                    <colour ID="N1-6" keyterm="gules" tokens="Gules"/>
+                                </tincture>
+                                <tincture ID="N1-7" index="2" origin="given">
+                                    <colour ID="N1-8" keyterm="or" tokens="and Or"/>
+                                </tincture>
+                            </division>
+                        </tincture>
+                    </field>
+                    <objects ID="N1-11">
+                        <charge ID="N1-14" number="1" tokens="a lion" keyterm="lion/lion">
+                            <modifier ID="N1-15" type="chargemod" keyterm="passant" tokens="passant"/>
+                            <tincture ID="N1-16" index="1" origin="given">
+                                <colour ID="N1-17" keyterm="argent" tokens="Argent"/>
+                            </tincture>
+                            <modifier ID="N1-13" type="position" keyterm="inQ1" tokens=", in the first quarter"/>
+                        </charge>
+                        <charge ID="N1-24" number="1" tokens="on a crescent" keyterm="geometric/crescent">
+                            <tincture ID="N1-25" index="1" origin="given">
+                                <colour ID="N1-26" keyterm="argent" tokens="Argent"/>
+                            </tincture>
+                            <modifier ID="N1-27" type="chargemod" value="crescent" keyterm="cadency"
+                                      tokens="for difference"/>
+                            <modifier ID="N1-29" type="chargewith" keyterm="on">
+                                <charge ID="N1-20" number="1" tokens=", a crescent" keyterm="geometric/crescent">
+                                    <tincture ID="N1-21" index="1" origin="given">
+                                        <colour ID="N1-22" keyterm="sable" tokens="Sable"/>
+                                    </tincture>
+                                </charge>
+                            </modifier>
+                        </charge>
+                    </objects>
+                </simple>
+            </shield>
+            <shield ID="N1-49" index="2">
+                <simple ID="N1-40">
+                    <field ID="N1-39">
+                        <tincture ID="N1-33" index="1" origin="given">
+                            <division ID="N1-34" keyterm="per-saltire" tokens=". ; second and third Per saltire">
+                                <tincture ID="N1-35" index="1" origin="given">
+                                    <colour ID="N1-36" keyterm="sable" tokens="Sable"/>
+                                </tincture>
+                                <tincture ID="N1-37" index="2" origin="given">
+                                    <fur ID="N1-38" keyterm="ermine" tokens="and Ermine"/>
+                                </tincture>
+                            </division>
+                        </tincture>
+                    </field>
+                    <objects ID="N1-41">
+                        <charge ID="N1-43" number="1" tokens=", a lion" keyterm="lion/lion">
+                            <modifier ID="N1-44" type="chargemod" value="crescent" keyterm="rampant" tokens="rampant"/>
+                            <tincture ID="N1-45" index="1" origin="given">
+                                <colour ID="N1-46" keyterm="or" tokens="Or"/>
+                            </tincture>
+                        </charge>
+                    </objects>
+                </simple>
+            </shield>
+            <shield ID="N1-50" IDREF="N1-49" index="3"/>
+            <shield ID="N1-32" IDREF="N1-31" index="4"/>
+        </complex>
+        <overall ID="N1-52" keyterm="overall" tokens="; over all the quarterings">
+            <objects ID="N1-53">
+                <charge ID="N1-55" number="1" tokens="a crescent" keyterm="geometric/crescent">
+                    <tincture ID="N1-56" index="1" origin="given">
+                        <colour ID="N1-57" keyterm="azure" tokens="Azure"/>
+                    </tincture>
+                    <modifier ID="N1-58" type="chargemod" value="crescent" keyterm="cadency" tokens="for difference"/>
+                </charge>
+            </objects>
+        </overall>
+        <messages ID="N1-59"/>
+    </shield>

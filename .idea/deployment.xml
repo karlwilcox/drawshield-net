@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="drawshield3" deleteMissingItems="true" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;error_log">
+    <serverData>
+      <paths name="drawshield3">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/include/shield" local="$PROJECT_DIR$" web="/include/shield" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

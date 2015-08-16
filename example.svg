@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     preserveAspectRatio="xMidYMid meet" height="600" width="500" viewBox="0 0 1030 1230 ">
+    <defs>
+        <filter id="shiny" x="0" y="0" width="150%" height="150%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur1"/>
+            <feSpecularLighting result="specOut" in="blur1" specularExponent="20" lighting-color="#696969">
+                <fePointLight x="300" y="300" z="500"/>
+            </feSpecularLighting>
+            <feComposite result="highlight" in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1"
+                         k4="0"/>
+            <feOffset result="offOut" in="SourceGraphic" dx="14" dy="14"/>
+            <feColorMatrix result="matrixOut" in="offOut" type="matrix"
+                           values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0"/>
+            <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="10"/>
+            <feBlend in="highlight" in2="blurOut" mode="normal"/>
+        </filter>
+    </defs>
+    <g filter="url(#shiny)">
+        <g mask="url(#mask5)">
+            <g>
+                <g fill="#F0F0F0">
+                    <rect x="0" y="0" width="1000" height="1200">
+                        <title>Field</title>
+                    </rect>
+                </g>
+                <g fill="#050505">
+                    <g transform=" translate(100,230) scale(1.6, 1.6) ">
+                        <title>the words Now is the time for all good men to come to the aid of their party</title>
+                        <g stroke="#696969">
+                            <g fill="#050505">
+                                <text text-anchor="middle" font-family="verdana" font-size="36.363636363636" x="0"
+                                      y="400">
+                                    <textPath startOffset="50%" xlink:href="#path4">Now is the time for all good men to
+                                        come to the aid of their party
+                                    </textPath>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <defs>
+                <path d="m 50,200 a200,200 0 1,1 400,0 200,200 0 1,1 -400,0" id="path2"></path>
+                <path d="m 50,200 a200,200 0 1,1 400,0 200,200 0 1,1 -400,0" id="path4"></path>
+                <mask id="mask5">
+                    <path fill="#FFFFFF"
+                          d="m 0,0 0,800 c -6.0479349,41.93063 1.2341419,84.33503 21.489586,125.13639 20.255443,40.80137 53.477613,79.98631 98.039434,115.63581 44.56181,35.6494 100.44867,67.7517 164.92346,94.7345 64.47479,26.9828 137.51639,48.8374 215.54752,64.4933 78.03113,-15.6559 151.07273,-37.5105 215.54752,-64.4933 64.47479,-26.9828 120.36165,-59.0851 164.92346,-94.7345 44.56182,-35.6495 77.78399,-74.83444 98.03943,-115.63581 C 998.76586,884.33503 1006.0479,841.93063 1000,800 l 0,-800 z"/>
+                </mask>
+            </defs>
+        </g>
+    </g>
+    <text id="test1" x="10" y="1160" font-size="30">Drawshield 2.6b</text>
+    <text x="10" y="1190" font-size="30">drawshield.net</text>
+    <g onclick="document.getElementById('infobox').setAttribute('visibility','visible');document.getElementById('text1').setAttribute('visibility','visible');">
+        <text fill="black" text-anchor="end" x="990" y="1190" font-size="30">Click for information</text>
+    </g>
+    <g id="infobox" visibility="hidden">
+        <rect
+                width="1000"
+                height="1200"
+                x="0"
+                y="0"
+                style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3"/>
+        <g id="return"
+           onclick="document.getElementById('infobox').setAttribute('visibility','hidden');document.getElementById('text1').setAttribute('visibility','hidden');document.getElementById('text2').setAttribute('visibility','hidden');document.getElementById('text3').setAttribute('visibility','hidden');document.getElementById('text4').setAttribute('visibility','hidden');">
+            <rect
+                    width="950"
+                    height="75"
+                    rx="10"
+                    ry="10"
+                    x="25"
+                    y="1100"
+                    style="fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:3"/>
+            <text
+ x="500"
+ y="1150"
+ xml:space="preserve"
+ style="font-size:40px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+ ><tspan
+ x="500"
+ y="1150"
+ id="tspan2991">Return to Shield Image</tspan></text>
+        </g>
+        <g onclick="document.getElementById('text1').setAttribute('visibility','visible');document.getElementById('text2').setAttribute('visibility','hidden');document.getElementById('text3').setAttribute('visibility','hidden');document.getElementById('text4').setAttribute('visibility','hidden');"
+           id="tab1">
+            <path
+                    d="m 35,100 c 0,0 -5,0 5,0 10,0 10,0 10,-10 0,-15 0,-41.25 0,-55 0,-10 10,-10 10,-10 0,0 170,0 185,0 4.71405,0 10,0 10,10 0,15 0,40 0,55 0,0 0,10 10,10"
+                    id="rect2993"
+                    style="fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:3"
+                    />
+            <text
+ x="71.269531"
+ y="70.494957"
+ id="text2998"
+ xml:space="preserve"
+ style="font-size:40px;font-style:normal;font-weight:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+ ><tspan
+ x="71.269531"
+ y="70.494957"
+ id="tspan3000">Blazon</tspan></text>
+        </g>
+        <g onclick="document.getElementById('text1').setAttribute('visibility','hidden');document.getElementById('text2').setAttribute('visibility','visible');document.getElementById('text3').setAttribute('visibility','hidden');document.getElementById('text4').setAttribute('visibility','hidden');"
+           id="tab2">
+            <path
+                    d="m 270,100 c 10,0 10,0 10,-10 0,-15 0,-41.25 0,-55 0,-10 10,-10 10,-10 0,0 170,0 185,0 4.71405,0 10,0 10,10 0,15 0,40 0,55 0,0 0,10 10,10"
+                    id="path3016"
+                    style="fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:3"
+                    />
+            <text
+ x="301.26953"
+ y="70.494957"
+ id="text3018"
+ xml:space="preserve"
+ style="font-size:40px;font-style:normal;font-weight:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+ ><tspan
+ x="301.26953"
+ y="70.494957"
+ id="tspan3020">Links</tspan></text>
+        </g>
+        <g onclick="document.getElementById('text1').setAttribute('visibility','hidden');document.getElementById('text2').setAttribute('visibility','hidden');document.getElementById('text3').setAttribute('visibility','visible');document.getElementById('text4').setAttribute('visibility','hidden');"
+           id="tab3">
+            <path
+                    d="m 500,100 c 10,0 10,0 10,-10 0,-15 0,-41.25 0,-55 0,-10 10,-10 10,-10 0,0 170,0 185,0 4.71405,0 10,0 10,10 0,15 0,40 0,55 0,0 0,10 10,10"
+                    style="fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:3"/>
+            <text
+ x="526.26953"
+ y="70.494957"
+ id="text3028"
+ xml:space="preserve"
+ style="font-size:40px;font-style:normal;font-weight:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+ <tspan
+ x="526.26953"
+ y="70.494957"
+ id="tspan3030">(Spare)</tspan></text>
+        </g>
+        <g onclick="document.getElementById('text1').setAttribute('visibility','hidden');document.getElementById('text2').setAttribute('visibility','hidden');document.getElementById('text3').setAttribute('visibility','hidden');document.getElementById('text4').setAttribute('visibility','visible');"
+           id="tab4">
+            <path
+                    style="fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:3"
+                    d="m 730,100 c 10,0 10,0 10,-10 0,-15 0,-41.25 0,-55 0,-10 10,-10 10,-10 0,0 170,0 185,0 4.71405,0 10,0 10,10 0,15 0,40 0,55 0,0 0,10 10,10"
+                    />
+            <text
+ x="761.26953"
+ y="70.494957"
+ id="text3036"
+ xml:space="preserve"
+ style="font-size:40px;font-style:normal;font-weight:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+ ><tspan
+ x="761.26953"
+ y="70.494957"
+ id="tspan3038">Legal</tspan><tspan
+ x="761.26953"
+ y="20.494957"
+ id="tspan3040" /></text>
+        </g>
+        <g visibility="hidden"
+           id="text4">
+            <path
+                    id="path6789"
+                    d="m 945,90 c 0,0 0,10 10,10 15,0 10,0 10,0 5.54,0 10,4.46 10,10 l 0,955 c 0,5.54 -4.46,10 -10,10 l -930,0 c -5.54,0 -10,-4.46 -10,-10 l 0,-955 c 0,-5.54 0,-10 10,-10 0,0 685,0 695,0 10,0 10,0 10,-10"
+                    style="fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:3"
+                    />
+            <text x="35" y="174" text-decoration="none" font-weight="bold" font-size="30" fill="black">Disclaimer:
+            </text>
+            <text x="35" y="228" text-decoration="none" font-size="30" fill="black">Provided for education and
+                information only. The use of
+            </text>
+            <text x="35" y="264" text-decoration="none" font-size="30" fill="black">heraldic devices is restricted in
+                many countries,
+            </text>
+            <text x="35" y="300" text-decoration="none" font-size="30" fill="black">independently of copyright. The
+                granting of a Coat of Arms is
+            </text>
+            <text x="35" y="336" text-decoration="none" font-size="30" fill="black">solely the right of the appropriate
+                Heraldic Authority for
+            </text>
+            <text x="35" y="372" text-decoration="none" font-size="30" fill="black">your nationality and country of
+                residence.
+            </text>
+            <text x="35" y="426" text-decoration="none" font-weight="bold" font-size="30" fill="black">Program Code
+                Credits:
+            </text>
+            <text x="35" y="480" text-decoration="none" font-size="30" fill="black">(c) Karl R. Wilcox 2010-2014</text>
+            <text x="35" y="516" text-decoration="none" font-size="30" fill="black">Apache 2.0 License
+                karl@karlwilcox.com
+            </text>
+            <text x="35" y="570" text-decoration="none" font-weight="bold" font-size="30" fill="black">Image Component
+                Credits:
+            </text>
+            <text x="35" y="624" text-decoration="none" font-size="30" fill="black">characters/word (not known)</text>
+        </g>
+        <g visibility="hidden"
+           id="text3">
+            <path
+                    style="fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:3"
+                    id="path3031"
+                    d="m 715,90 c 0,0 0,10 10,10 15,0 240,0 240,0 5.54,0 10,4.46 10,10 l 0,955 c 0,5.54 -4.46,10 -10,10 l -930,0 c -5.54,0 -10,-4.46 -10,-10 l 0,-955 c 0,-5.54 0,-10 10,-10 0,0 455,0 465,0 10,0 10,0 10,-10"
+                    />
+        </g>
+        <g visibility="hidden"
+           id="text2">
+            <path
+                    style="fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:3"
+                    id="path3047"
+                    d="m 485,90 c 0,0 0,10 10,10 15,0 470,0 470,0 5.54,0 10,4.46 10,10 l 0,955 c 0,5.54 -4.46,10 -10,10 l -930,0 c -5.54,0 -10,-4.46 -10,-10 l 0,-955 c 0,-5.54 0,-10 10,-10 0,0 225,0 235,0 10,0 10,0 10,-10"
+                    />
+            <text x="35" y="156" text-decoration="none" font-size="30" fill="black">argent -
+                <tspan fill="blue" text-decoration="underline"
+                       onclick="window.open('http://karlwilcox.com/parker/a/argent','_blank')">
+                    http://karlwilcox.com/parker/a/argent
+                </tspan>
+            </text>
+            <text x="35" y="192" text-decoration="none" font-size="30" fill="black">the words Now is the time for all
+                good men to come to the aid
+            </text>
+            <text x="35" y="228" text-decoration="none" font-size="30" fill="black">of their party -
+                <tspan fill="blue" text-decoration="underline"
+                       onclick="window.open('http://karlwilcox.com/parker/w/word','_blank')">
+                    http://karlwilcox.com/parker/w/word
+                </tspan>
+            </text>
+        </g>
+        <g
+                id="text1">
+            <path
+                    style="fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:3"
+                    id="path3055"
+                    d="m 255,90 c 0,0 0,10 10,10 15,0 700,0 700,0 5.54,0 10,4.46 10,10 l 0,955 c 0,5.54 -4.46,10 -10,10 l -930,0 c -5.54,0 -10,-4.46 -10,-10 l 0,-955 c 0,-5.54 0,-10 10,-10 0,0 -5,0 5,0 10,0 10,0 10,-10"
+                    />
+            <text x="35" y="156" text-decoration="none" font-size="30" fill="black">Argent the words &quot;Now is the
+                time for all good men to
+            </text>
+            <text x="35" y="192" text-decoration="none" font-size="30" fill="black">come to the aid of their party&quot;
+                encircled faced of &quo-
+            </text>
+            <text x="35" y="228" text-decoration="none" font-size="30" fill="black">t;verdana&quot; proper</text>
+        </g>
+    </g>
+</svg>
