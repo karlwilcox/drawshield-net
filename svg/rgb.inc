@@ -53,6 +53,8 @@ function rgb($name) {
     'ordinary-stroke' => array ( 'drawshield' => 'none', 'nocolour' => '#848484', ),
     'pattern-stroke' => array ( 'drawshield' => 'none', 'nocolour' => '#848484', ),
     'division-stroke' => array ( 'drawshield' => 'none', 'nocolour' => '#848484', ),
+      // For sports fields
+      'white-line' => array ( 'drawshield' => '#FFFFFF', 'nocolour' => '#848484', ),
     // Error colour
     'gray' => array ( 'drawshield' => '#888888', ),
     // 'pattern-stroke' => array ( 'drawshield' => '#FF0000')

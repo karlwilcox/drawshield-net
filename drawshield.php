@@ -17,6 +17,17 @@
 //
 $options = array();
 include 'version.inc';
+
+function myErrorHandler($errno, $errstr, $errfile, $errline) {
+    global $options;
+    if ( E_RECOVERABLE_ERROR===$errno ) {
+        error_log ( $options['blazon'] . $errstr . ' ' . $errfile . ' '  . $errline );
+        // return true;
+    }
+    return false;
+}
+set_error_handler('myErrorHandler');
+
 /**
  * @var DOMDocument $dom
  */

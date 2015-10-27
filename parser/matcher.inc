@@ -76,6 +76,7 @@ class matcher {
       if ( $regex == '#' ) {
         $state = $this->tokenList->cur_word;
         $this->tokenList->cur_word = $t_word;
+        $temp = $this->matchedValue;
         if ( $num = self::searchMatch(languageDB::NUMBER) ) {
           $this->value = $num;
           $t_word = $this->tokenList->cur_word - 1;
@@ -83,6 +84,7 @@ class matcher {
         } else {
           $res = 0;
         }
+        $this->matchedValue = $temp;
         $this->tokenList->cur_word = $state;
       } else {
         $res = @preg_match('/^' . $regex . '$/i', $this->tokenList->words[$t_word]);
@@ -100,7 +102,7 @@ class matcher {
       }
       // else $res === 1
       if ( $negative ) { // Got a match, but didn't want it
-        $this->value = null; // TODO rewrite as a try/catch block?
+        // $this->value = null; // TODO rewrite as a try/catch block?
         return 0;
       }
       $t_word += 1; // Got a match, all OK, so move on
@@ -152,7 +154,11 @@ class matcher {
          if ( $count > $max_match ) {
            $max_match = $count;
            $match = $keyTerm;
-           $this->matchedValue = $this->value;
+           if (strpos($searchTerm,'*') !== false || strpos($searchTerm,'#') !== false) {
+             $this->matchedValue = $this->value;
+           } else {
+             $this->matchedValue = null;
+           }
          }
       }
     }

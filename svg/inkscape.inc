@@ -149,7 +149,7 @@ function getSvgFragment ($svgCode, $featureTinctures, $chargeGroup, $chargeName,
 
   if ( ($svg = simplexml_load_string($svgCode)) == null ) {
     $messages->addMessage('internal',"XML error reading charge data");
-    error_log("charge data error - " . $options['shield']);
+    error_log("charge data error - " . $options['blazon']);
     // Fallback item
     $svg = simplexml_load_string('<?xml version="1.0" encoding="UTF-8" standalone="no"?>
                 <svg

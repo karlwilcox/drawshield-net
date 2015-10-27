@@ -86,7 +86,7 @@ class languageDB extends lexicon {
         array ( 'impaled with', 'impaled' ),
         array ( 'dimidiated with', 'dimidiated' ),
       ),
-      self::ONFIELDOF => array ( 'on a field ?of' ),
+      self::ONFIELDOF => array ( '?(on|upon) a (field|court) ?of' ),
       self::WITH => array ( array ('(with|upon)', 'with' ) ),
       self::BETWEEN => array ( 'between', 'inter', 'inside', 'within', 'surrounded by', 'accompagne' ),
       self::QUARTERED => array (
@@ -243,6 +243,12 @@ class languageDB extends lexicon {
           array ( 'counter vair', 'counter-vair',    ),
           array ( 'counter potent', 'counter-potent',  ),
           array ( 'potent counter potent', 'potent-counter-potent', ),
+            // Sports pitches
+            array ('soccer', 'soccer-field'),
+            array ( '?american football', 'american-football-field'),
+            array ( 'tennis', 'tennis-court'),
+            array ( 'basketball', 'basket-ball'),
+            array ( 'basket ball', 'basket-ball'),
         ),
         self::SEMY => array ( '(seme|semy) (de|with|of)', '(aspersed|strewn) with', '(poudre|powdered) with' ),
         self::GROUP => array ( '(both|all|the|his|her|its)',  ),

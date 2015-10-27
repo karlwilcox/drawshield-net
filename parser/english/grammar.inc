@@ -348,15 +348,16 @@ class englishGrammar extends grammar {
       return null;
     }
     // $chargeType = $keyterm;
-    // In some cases we want the next input token as a "value" (e.g. "the word Karl")
-    if ( substr($keyterm,0,10) == 'characters'  )
-      $mods[] = $this->schema->makeMod('value',$this->phraseMatcher->getValue(),'value',self::tokens());
+    // In some cases we want the next input token as a "value" (e.g. "the word Karl" matches "words? *")
+    if ( $asterisk = $this->phraseMatcher->getValue() )
+      $mods[] = $this->schema->makeMod('value',$asterisk,'value',self::tokens());
     // Look for bundle again (e.g. "two arrow bundles"
     if ( $keyterm = self::find(languageDB::BUNDLE) ) 
       $mods[] = $this->schema->makeMod(languageDB::BUNDLE,null,$keyterm,self::tokens());
     // Now look for postfix stuff, including tinctures and arrangements
     $foundTinc = false;
     while ( self::moreInput() ) {
+      if ( self::semicolon()) break;
       $state2 = self::save();
       self::comma();
       self::ignore(languageDB::ANDD);
@@ -731,6 +732,9 @@ class englishGrammar extends grammar {
   }
   
   protected function quartered() {
+    /**
+     * @var DOMElement[] $subshields
+     */
     $subshields = array(0,null,null,null,null,null,null,null,null);
   
     $state = self::save();
@@ -749,6 +753,7 @@ class englishGrammar extends grammar {
           $found = $foundQuarter = true;
         }
         if ( $found ) {
+          $ID = null;
           $quarter = self::shield(); // Look for the description of this quarter
           if ( $quarter != null and count($indices) > 1 ) { 
             $ID = $quarter->getAttribute('ID');
@@ -909,7 +914,7 @@ class englishGrammar extends grammar {
       // This could be [colour] [treatment] [colour],
       // unless it is followed by a comma
       self::comma();
-      if ( self::moreInput() and !self::semicolon() ) {
+      if ( self::moreInput() /* and !self::semicolon() */ ) {
         if ( ($keyterm = self::find(languageDB::TREATMENT)) ) {
           $treat = $this->schema->makeNode(blazonML::E_TREATMENT, array ( blazonML::A_KEYTERM => $keyterm ),
             self::tokens());
@@ -992,4 +997,3 @@ class englishGrammar extends grammar {
   }
 }
 
-?>

@@ -30,7 +30,7 @@
       <table style="width:600px" summary="shield table">
         <tr>
           <td rowspan="4" style="width: 459px; text-align:center">
-            <textarea id="blazon" name="blazon" rows="6" cols="50"></textarea>
+            <textarea id="blazon" name="blazon" rows="6" cols="50" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
           </td>
           <td style="width: 81px">
             <input type="button" name="createbutton" value="Create!" style="width: 90px"/>
@@ -156,16 +156,16 @@
     <script  type="text/javascript" src="randomshield.js"></script>
    <script>   //<![CDATA[
       // Set button actions
-      document.forms['myform'].createbutton.onclick = function () {randomifempty(); drawshield('/include/shield/drawshield.php?')};
-      document.forms['myform'].textbutton.onclick = function() {randomifempty(); saveshield('/include/shield/drawshield.php?') };
+      document.forms['myform'].createbutton.onclick = function () {randomifempty(); drawshield('drawshield.php?')};
+      document.forms['myform'].textbutton.onclick = function() {randomifempty(); saveshield('drawshield.php?') };
       document.forms['myform'].searchbutton.onclick = function () {
-        requestHTML( '/include/shield/dbquery.php?term=' + encodeURIComponent(document.forms['myform'].searchterm.value),'resultstable');
+        requestHTML( 'dbquery.php?term=' + encodeURIComponent(document.forms['myform'].searchterm.value),'resultstable');
       };
      document.forms['myform'].parsebutton.onclick = function () {
-        requestHTML( '/include/shield/drawshield.php?stage=parser&blazon=' + encodeURIComponent(document.forms['myform'].blazon.value),'resultstable');
+        requestHTML( 'drawshield.php?stage=parser&blazon=' + encodeURIComponent(document.forms['myform'].blazon.value),'resultstable');
       };
      document.forms['myform'].referencesbutton.onclick = function () {
-        requestHTML( '/include/shield/drawshield.php?stage=references&blazon=' + encodeURIComponent(document.forms['myform'].blazon.value),'resultstable');
+        requestHTML( 'drawshield.php?stage=references&blazon=' + encodeURIComponent(document.forms['myform'].blazon.value),'resultstable');
       };
      function quickshield(target,blazon) {
        var thisimg = document.getElementById(target);

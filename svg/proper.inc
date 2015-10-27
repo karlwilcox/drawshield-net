@@ -16,6 +16,7 @@ class properColour {
   static $gold;
   static $silver;
   static $caucasian;
+  static $orange;
   static $groups = array();
   static $charges = array();
   static $features = array();
@@ -37,6 +38,7 @@ class properColour {
     self::$purple = rgb('purpure');
     self::$blue = rgb('azure');
     self::$caucasian = rgb('carnation');
+    self::$orange = rgb('orange');
     // etc...
     self::$groups = array(
       'human' => self::$caucasian,
@@ -79,6 +81,12 @@ class properColour {
       'popinjay' => self::$green,
       'rose' => self::$red,
       'planet-earth' => self::$green,
+        'soccerball' => self::$white,
+        'tennis-ball' => self::$yellow,
+        'american-football' => self::$brown,
+        'basketball' => self::$orange,
+        'baseball-glove' => self::$brown,
+        'baseball' => self::$white,
     );
     self::$features = array(
       'with-stone' => self::$gray,

@@ -14,3 +14,9 @@
 if ( $chargeKey != 'tree' and existModifierWithKeyterm($node,'whole-tree') and file_exists($folder . 'inkscape/' . $chargeKey . '-tree.svg')) {
   $charge['file'] =  'inkscape/' . $chargeKey . '-tree.svg';
 }
+
+if ( existModifierWithKeyterm($node,'leaf-only') and file_exists($folder . 'inkscape/' . $chargeKey . '-leaf.svg')) {
+  $charge['file'] = 'inkscape/' . $chargeKey . '-leaf.svg';
+}
+
+

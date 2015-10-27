@@ -15,7 +15,9 @@
           array( 'cross (greek|humetty|couped|coupee)', 'cross/greek' ), 
           array( 'cross(es)? patriarchal', 'cross/patriarchal' ), 
           array( 'cross(es)? ?of (saint|st) anthony', 'cross/tau' ), 
-          array( 'cross(es)? tau', 'cross/tau' ), 
+          array( 'cross(es)? portate', 'cross/portate' ),
+          array( 'cross(es)? paternoster', 'cross/paternoster' ),
+          array( 'cross(es)? tau', 'cross/tau' ),
           array( 'cross(let|lets|es)? of (four|4) fusils?', 'quadrate/cross-4fusils' ), 
           array( 'cross(let|lets|es)? of (nine|9) fusils?', 'quadrate/cross-9fusils' ), 
           array( 'cross(es)? avellane', 'quadrate/cross-avellane' ), 
@@ -60,6 +62,7 @@
       array ( 'greek cross(es)?', 'cross/greek' ),
       array ( 'taus? ?cross(es)?', 'cross/tau' ),
       array ( 'paternoster cross(es)?', 'cross/paternoster' ),
+      array ( 'rosary cross(es)?', 'cross/paternoster' ),
       array ( 'portate cross(es)?', 'cross/portate' ),
       array ( '(latin|long|passion) cross(es)?', 'cross/long' ),
       // human
@@ -734,7 +737,7 @@
       array ( '(letters?|text) *', 'characters/letter' ),
       array ( 'roman ?letter *', 'characters/roman' ),
       array ( 'words? *', 'characters/word' ),
-      array ( '(monogram|cypher)s? *', 'characters/cypher' ),
+      array ( '(monogram|cypher)s? *', 'characters/letter' ),
       array ( '?astronomical (character|symbol)s? ?(of|for) ?the ?planet *', 'characters/astronomy' ),
       // farming
       array ( 'shepherds crooks?', 'farming/shepherds-crook' ),
@@ -803,6 +806,16 @@
      array ( 'planet earths?', 'retro-scifi/planet-earth' ),
      array ( '(rocket|space) m[ae]n', 'retro-scifi/rocket-man' ),
      array ( '(rocket|space)m[ae]n', 'retro-scifi/rocket-man' ),
+       // sports
+       array ( 'balls?', 'sports/ball'),
+       array ( 'baseballs?', 'sports/baseball'),
+       array ( 'soccer balls?', 'sports/soccerball'),
+       array ( '?american footballs?', 'sports/american-football'),
+       array ( 'basketballs?', 'sports/basketball'),
+       array ( 'basket balls?', 'sports/basketball'),
+       array ( 'tennis balls?', 'sports/tennis-ball'),
+       array ( 'football helmets?', 'sports/football-helmet'),
+       array ( 'baseball gloves?', 'sports/baseball-glove'),
+       array ( 'sports? (number|digit)s? *', 'sports/number'),
           );
    
-?>

@@ -32,6 +32,7 @@
 function read_chg_file(DOMElement $node) {
   global $messages;
 
+  $title = '???';
   $chg_data = array();
   if ( is_null($node) or $node->nodeName == 'missing' ) {
     $title = 'missing';
@@ -57,6 +58,9 @@ function read_chg_file(DOMElement $node) {
     if ( file_exists( $file )) {
       $chg_data = includeCharge( $node, $file, $chg_data, $folder, $chargeKey );
     }
+      // It is possible that some node attributes have been changed, so re-read them
+    list($folder,$chargeKey) = preg_split(':/:', $node->getAttribute('keyterm'));
+    $folder = "svg/charges/$folder/";
     // Another chance to set file, is it a simple name match?
     $file =  'inkscape/' . $chargeKey . '.svg';
     if ( !array_key_exists('file',$chg_data) and file_exists( $folder . $file ) )
@@ -308,8 +312,14 @@ function getCharge( DOMElement $node ) {
         $charges = makeCharge($chargeToAdd);
         $scale = min ( $width/1400, $height/1400);
         // scale to fit onto charge - then move so charges are central
-        $charges = sprintf('<g transform="translate(%2f,%2f) scale(%4f)">%s</g>', (($width/2)-(1000*$scale)/2), (($height/2)-(1100*$scale)/2),
-          $scale, $charges);
+        // TODO fix this horrible bodge
+        if ($node->getAttribute('keyterm') == 'sports/football-helmet' ) {
+          $charges = sprintf('<g transform="translate(%2f,%2f) scale(%4f)">%s</g>', (($width / 2) - (550 * $scale) / 2), (($height / 2) - (1400 * $scale) / 2),
+              $scale, $charges);
+        } else {
+          $charges = sprintf('<g transform="translate(%2f,%2f) scale(%4f)">%s</g>', (($width / 2) - (1000 * $scale) / 2), (($height / 2) - (1100 * $scale) / 2),
+              $scale, $charges);
+        }
         $body .= $charges;
         break;
     }

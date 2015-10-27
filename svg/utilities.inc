@@ -251,3 +251,41 @@ function getRenderInfo(DOMElement $node, $match ) {
   return null;
 }
 
+function getFieldTincture(DOMElement $node) {
+  do {
+    $node = $node->parentNode;
+  } while ($node->nodeName != blazonML::E_PLAIN);
+  return getTinctureNode($node->firstChild);
+}
+
+function words2digits ($words) {
+  $additions = array ( 'a' => 1, 'one' => 1, 'two' => 2, 'three' => 3, 'four' => 4, 'five' => 5,
+      'six' => 6, 'seven' => 7, 'eight' => 8, 'nine' => 9, 'zero' => 0,
+      'ten' => 10, 'eleven' => 11, 'twelve' => 12, 'thirteen' => 13,
+      'fourteen' => 14, 'fifteen' => 15, 'sixteen' => 16, 'seventeen' => 17,
+      'eighteen' => 18, 'nineteen' => 19, 'twenty' => 20, 'thirty' => 30,
+      'forty' => 40, 'fifty' => 50, 'sixty' => 60, 'seventy' => 70, 'eighty' => 80,
+      'ninety' => 90 );
+  $multipliers = array ( 'hundred' => 100, 'thousand' => 1000 );
+
+  $found = false;
+  $value = 0;
+  $previous = 0;
+  foreach ( explode(' ',$words) as $word ) {
+    $word = strtolower($word);
+    if (array_key_exists($word,$additions)) {
+      $found = true;
+      $previous = $additions[$word];
+      $value += $previous;
+    } elseif (array_key_exists($word,$multipliers)) {
+      $found = true;
+      $value -= $previous; // It is a multiplier, not an addition
+      if ($previous == 0)
+        $value += $multipliers[$word];
+      else
+        $value += $previous * $multipliers[$word];
+    }
+    // no error if nothing found
+  }
+  return $found ? sprintf("%d",$value) : false;
+}

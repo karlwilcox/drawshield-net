@@ -33,7 +33,7 @@ class references {
       array ( '//charge[@keyterm="special/same"]','ancestor::charge[1]|ancestor::ordinary[1]|preceding::charge[1]|preceding::ordinary[1]', true ), // two of the same | another ...
       array ( '//tincture[@origin="ofsame"]','ancestor::tincture[1]|preceding::tincture[1]', true ),// Of the same
       array ( '//tincture[@origin="oflast"]','ancestor::tincture[not(@origin="pending")][1]|preceding::tincture[not(@origin="pending")][1]', true ),// Of the last (in case this is different from of the same?)
-      array ( '//tincture[@origin="pending"]','preceding-sibling::modifier/tincture[1]|following::tincture[1]', false ),// Pending
+//      array ( '//tincture[@origin="pending"]','preceding-sibling::modifier/tincture[1]|following::tincture[1]', false ),// Pending
       array ( '//tincture[@origin="offield"]','ancestor::simple/field/tincture', true ),// Of the field
       array ( '//tincture[@origin="offirst"]','preceding::tincture[colour][last()]', true ),// of the first
       array ( '//tincture[@origin="ofsecond"]','preceding::tincture[colour][last()-1]', true ),// of the second
@@ -66,7 +66,7 @@ class references {
           $target = $refNodes->item(0);
           $targetID = $target->getAttribute('ID');
           $sourceNode->setAttribute('IDREF',$targetID);
-        } elseif ($ref[2]) { // Error reporting flag
+        } else { // Error reporting
           $sourceTokens = $sourceNode->getAttribute('tokens');
           $messages->appendChild($this->dom->createElement('message',"Cannot find what \"$sourceTokens\" refers to"));
         }
@@ -86,6 +86,20 @@ class references {
         $messages->appendChild($this->dom->createElement('message',"Cannot find number for \"as many\" (using \"2\")"));
         $sourceNode->setAttribute('number','2');
       }
+    }
+
+    // Resolve tinctures that remain as "pending" (i.e. not given but same as previous - if there was one)
+    $nodeList = $this->xpath->query('//tincture[@origin="pending"]');
+    foreach ($nodeList as $sourceNode ) {
+      $refNodes = $this->xpath->query('preceding-sibling::modifier/tincture[1]|following::tincture[1]',$sourceNode);
+      if ( $refNodes->length ) {
+        /**
+         * @var DOMElement $target
+         */
+        $target = $refNodes->item(0);
+        $targetID = $target->getAttribute('ID');
+        $sourceNode->setAttribute('IDREF',$targetID);
+      } // else leave as pending, to be found later (in svgutils)
     }
     return $this->dom;
   }

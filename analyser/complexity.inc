@@ -68,7 +68,7 @@ class complexity {
       $output .= "<p>Complexity Score: <strong>$this->score</strong></p>\n";
     else
 
-      $output .= "Complexity Score: $score\n";
+      $output .= "Complexity Score: $this->score\n";
     $output .= $blockStart;
     foreach ( $counts as $key => $count )
       $output .= $lineStart . "$key: $count" . $lineEnd;

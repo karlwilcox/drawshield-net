@@ -101,7 +101,7 @@ function includeOrdinary( DOMElement &$node ) {
   if ( stream_resolve_include_path($file) !== false )
     include ( $file );
   else { // can't draw this ordinary
-    $messages->addMessage('warning',"Cannot draw $type, substituting bend" );
+    $messages->addMessage('warning',"Cannot draw ordinary, substituting bend" );
     include ( 'ordinaries/bend.inc');
   }
   return $ordinary;
@@ -297,6 +297,9 @@ function makeOrdinary( DOMElement &$node ) {
    * @var DOMElement $btwn_ord
    */
   foreach ( getModifiersByTypeAsArray($node,'between',true) as $chargesWithin) {
+    /**
+     * @var DOMElement $chargesWithin
+     */
     $chargesWithin = (object)$chargesWithin->firstChild;
     // If the underlying ordinary is mirrored, we need to mirror the "on" item so it ends up back the right way
     if ($mirrored) {

@@ -37,7 +37,7 @@ class infobox {
       $linkStart = '';
       $linkEnd = '';
       if ( $word == '') continue;
-      if (strpos ( $word, 'http:') === 0) { // looks like a URL
+      if (strpos ( $word, 'http') === 0) { // looks like a URL
         $linkStart = "<tspan fill=\"blue\" text-decoration=\"underline\" onclick=\"window.open('$word','_blank')\">";
         $linkEnd = '</tspan>';
       }
@@ -77,7 +77,7 @@ class infobox {
     $lines = self::format($text);
     foreach ($lines as $line) {
       if ( $this->ypos[$num] >= self::PAGEEND ) break; // reached end of page...
-      $this->texts[$num] .= '<text x="'. self::INSET . '" y="' . ($this->ypos[$num] += self::LINEHEIGHT) . '" text-decoration="none" font-size="30" fill="black" >' . htmlentities($line) . '</text>';
+      $this->texts[$num] .= '<text x="'. self::INSET . '" y="' . ($this->ypos[$num] += self::LINEHEIGHT) . '" text-decoration="none" font-size="30" fill="black" >' . $line . '</text>';
     }
   }
 
