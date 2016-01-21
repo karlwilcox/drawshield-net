@@ -13,7 +13,7 @@
    limitations under the License. */
 
 
-$ordinary['shape_spec'] = array ( 'NC' => 'X-100Y350A450G450a300C450A450c300E450C650e300G650E450g300',
+$ordinary['shape_spec'] = array ( 'NC' => 'X-100Y350A450G470a300C470A450c300E450C670e300G670E450g300',
                                   'CH' => 'X400Y200a200C400A500c200E500C500e200G500E500g200A500G400' );
 
 $ordinary['chargesOn'] = chiefPresent() ? '500,700,160,160////250,700,160,160:750,700:500,450:500,700:500,950/x' :

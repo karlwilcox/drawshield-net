@@ -29,10 +29,17 @@ elseif ( existModifierWithKeyterm($node,'inarched') )
                 'CH' => '<path fill-rule="evenodd" d="m 720,1100 c 0,300 -100,500 -220,500 -120,0 -220,-200 -220,-500 0,-250 100,-460 220,-460 120,0 220,210 220,460 z m -80,-10 c 0,210 -60,310 -140,310 -80,0 -140,-100 -140,-310 0,-200 60,-350 140,-350 80,0 140,150 140,350 z" />
                          <path fill-rule="evenodd" d="M-65.6,1215.6l-141.4,-141.4l707,-707l707,707l-141.4,141.4l-565.6,-565.6l-565.6,565.6Z" />' );
 else  {
-  if ( $node->getAttribute('number') == '1' )
-    $ordinary['shape_spec'] = array ( "NC" => 'V1X500Y500D800f200H1000B1000d200F800', "CH" => 'V1X500Y650D800f200H1000B1000d200F800');
-  else
-    $ordinary['shape_spec'] = array ( "NC" => 'V1X500Y400D800f200H1000B1000d200F800     V1X500Y600D800f200H1000B1000d200F800', "CH" => 'V1X500Y650D800f200H1000B1000d200F800');
+  switch ( $node->getAttribute('number') ) {
+    case '2':
+      $ordinary['shape_spec'] = array("NC" => 'V1X500Y400D800f200H1000B1000d200F800     V1X500Y800D800f200H1000B1000d200F800', "CH" => 'V1X500Y500D800f141H941B941d141F800  V1X500Y850D800f141H941B941d141F8');
+      break;
+    case '3':
+      $ordinary['shape_spec'] = array("NC" => 'V1X500Y200D800f141H941B941d141F800  V1X500Y550D800f141H941B941d141F8   V1X500Y900D800f141H941B941d141F8', "CH" => 'V1X500Y500D800f141H941B941d141F800   V1X500Y800D800f141H941B941d141F   V1X500Y1100D800f141H941B941d141F');
+      break;
+    default: // just do one
+      $ordinary['shape_spec'] = array("NC" => 'V1X500Y500D800f200H1000B1000d200F800', "CH" => 'V1X500Y650D800f200H1000B1000d200F800');
+      break;
+  }
   if ( existModifierWithKeyterm($node,'compony1') )
     $ordinary['body2'] = array ( 'NC' => '<path d="M 957,542 672,828 797,953 1080,668 z M 45,542 331,828 205,953 -80,668 z M 296,292 171,417 456,702 501,657 546,702 832,417 706,292 501,497 296,292 z" />',
                                   'CH' => '<path d="M 957,692 672,978 797,1100 1080,818 z M 45,692 331,978 205,1100 -80,818 z M 296,442 171,567 456,852 501,807 546,852 832,567 706,442 501,647 z" />' );

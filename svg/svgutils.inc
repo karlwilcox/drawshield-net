@@ -49,6 +49,7 @@ function apply_tincture ( DOMElement $tincture, $object, $chg_size = '',
 	
 	$patTrans = '';
 	$object_type = $tincture->parentNode->nodeName;
+  $objectKeyterm = $tincture->parentNode->getAttribute('keyterm');
 	if ( $object_type == 'charge' and $chg_size != '' ) // We make some things a wee bit smaller if on a charge, just for looks
 	{
 	  list($chgX,$chgY) = explode(',', $chg_size);
@@ -130,7 +131,16 @@ function apply_tincture ( DOMElement $tincture, $object, $chg_size = '',
 				  $retval = '<g>' . $title . '<desc>Division used to fill field</desc>' . makeDivision( $child ) . '</g>';
 			  	break;
         case 'ordinary':
-				case 'charge':
+          if ($objectKeyterm == 'plain-cross' || $objectKeyterm == 'bend') {
+            $new_div = makeDivision( $child );
+             $mask_id = add_def ( 'mask width="1200" height="1400" maskUnits="userSpaceOnUse"',
+                $title . "<desc>Division used to fill $objectKeyterm</desc>" .
+                '<g fill="white">' . $object . '</g>' );
+            $retval = add_def();
+            $retval .= '<g mask="url(#' . $mask_id . ')"  >' . $new_div . '</g>';
+            break;
+          } // else flow through
+        case 'charge':
 				  chief('push','NC');
           $new_div = makeDivision( $child );
           chief('pop');

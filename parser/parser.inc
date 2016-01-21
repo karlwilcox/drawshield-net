@@ -26,6 +26,10 @@ class parser {
         include "english/grammar.inc";
         $this->grammar = new englishGrammar($language, $this->xmlMaker);
         break;
+      case 'french':
+        include "french/grammar.inc";
+        $this->grammar = new frenchGrammar($language, $this->xmlMaker);
+        break;
       default:
         echo 'Wah! No language found in parser';
         break;

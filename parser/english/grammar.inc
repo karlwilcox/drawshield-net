@@ -634,7 +634,7 @@ class englishGrammar extends grammar {
       $parts = explode('/',$keyterm);
       $type = $parts[1];
       if ($type == 'chevron') {  // TODO draw this (and 2 bends!)
-        if ($ordNum > 2) {// must be a charge
+        if ($ordNum > 3) {// must be a charge
           self::restore($state);
           return null;
         }
@@ -852,6 +852,27 @@ class englishGrammar extends grammar {
     self::discard($state);
     return $this->schema->makeNode(blazonML::E_COLOUR, array ( blazonML::A_KEYTERM => $keyterm ), self::tokens());
   }
+
+  protected function treatment() {
+    $state = self::save();
+    $keyterm = self::find(languageDB::TREATMENT);
+    if ( $keyterm == null ) {
+      self::restore($state);
+      return null;
+    }
+    self::ignore(languageDB::WORD_OF);
+    if ($ofNum = self::find(languageDB::NUMBER))
+      self::ignore(languageDB::POINTS);
+    if ( $ofNum == null || $ofNum < 5 )
+      $ofNum = 5;
+    elseif ( $ofNum > 10 )
+      $ofNum = 10;
+    if ( $keyterm == 'mulletty')
+      $keyterm .= '-' . $ofNum;
+    self::discard($state);
+    return $this->schema->makeNode(blazonML::E_TREATMENT, array ( blazonML::A_KEYTERM => $keyterm ), self::tokens());
+
+  }
   
   protected function division( $depth = 1 ) {
 
@@ -915,9 +936,8 @@ class englishGrammar extends grammar {
       // unless it is followed by a comma
       self::comma();
       if ( self::moreInput() /* and !self::semicolon() */ ) {
-        if ( ($keyterm = self::find(languageDB::TREATMENT)) ) {
-          $treat = $this->schema->makeNode(blazonML::E_TREATMENT, array ( blazonML::A_KEYTERM => $keyterm ),
-            self::tokens());
+        if ( ($treat = self::treatment()) ) {
+          $keyterm = $treat->getAttribute('keyterm');
           $tinc1 = $this->schema->makeNode(blazonML::E_TINCTURE, array ( blazonML::A_INDEX => '1'));
           $tinc1->appendChild($colourOrFur);
           $colourOrFur = null; // used
@@ -952,8 +972,7 @@ class englishGrammar extends grammar {
         }
       }
     // Look for [treatment] [colour] [colour]
-    } elseif ( ($keyterm = self::find(languageDB::TREATMENT)) ) {
-      $treat = $this->schema->makeNode(blazonML::E_TREATMENT, array ( blazonML::A_KEYTERM => $keyterm ), self::tokens());
+    } elseif ( ($treat = self::treatment()) ) {
       self::comma();
       $treat->appendChild(self::tincture(true));
       self::comma();

@@ -83,8 +83,11 @@ function makeSemy( $node ) {
   if ( $background == null or $charge == null )
     $messages->addMessage('internal', 'Bad semyde element' );
   else {
-    $semy = PlaceCharge($charge, 100, 100, 50, 50);
-    $semy .= PlaceCharge($charge, 100, 100, 150, 150);
+    $semy = PlaceCharge($charge, 100, 100, 100, 100);
+    $semy .= PlaceCharge($charge, 100, 100, 0, 0);
+    $semy .= PlaceCharge($charge, 100, 100, 200, 0);
+    $semy .= PlaceCharge($charge, 100, 100, 0, 200);
+    $semy .= PlaceCharge($charge, 100, 100, 200, 200);
     $base = apply_tincture ( $background, '<rect x="0" y="0" width="200" height="200" />' );
     return array (  'link' => 'http://karlwilcox.com/parker/s/seme', 'width' => 200, 'height' => 200, 'body' => $base . $semy );
  }

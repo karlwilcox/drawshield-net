@@ -24,10 +24,3 @@ elseif ( $num_of > 10 )
 
 $charge['file'] = 'inkscape/mullet-' . $num_of . $suffix . '.svg';
 
-/* if ( $points = getModifierValueByKeyterm($node, 'of-num')) {
-  $messages->addMessage('internal',$folder . 'inkscape/mullet-' . $points . '.svg' );
-  if ( file_exists( $folder . 'inkscape/mullet-' . $points . '.svg'))
-    $charge['file'] = 'inkscape/mullet-' . $points . '.svg';
-}
-$messages->addMessage('internal',$folder . 'inkscape/mullet-' . $points . '.svg' );
-*/
